@@ -1,0 +1,78 @@
+<div class="comment-wrapper ${this.comment.classes}" id="comment-wrapper-${this.comment.cid}">
+  <a id="comment-${this.comment.cid}"></a>
+  <div class="comment-inner" id="comment-inner-${this.comment.cid}">
+    <div class="" id="ajax-reply-comment-${this.comment.cid}">
+      <div class="comment-submitted">
+        <!-- User Picture-->
+
+        <div class="user-picture">
+          <!-- rh-avatar></rh-avatar -->
+          <a href="/user/${this.comment.uid}" class="thumbnail" title="View user profile.">
+            <img
+              typeof="foaf:Image"
+              src="${this.profiles[this.comment.uid].profile_img}"
+              alt="${this.comment.fullName}'s picture"
+              title="${this.comment.fullName}'s picture"
+            >
+          </a>
+          ${this.profiles[this.comment.uid].badges_rendered}
+          <span class="points">${this.profiles[this.comment.uid].points} points</span>
+        </div>
+
+        <!-- Timestamp & Private Flag-->
+        <div class="comment-timestamp comment-meta">
+          <a href="#comment-${this.comment.cid}" rel="bookmark">
+            <rh-datetime
+              timestamp="${this.comment.created}"
+            ></rh-datetime>
+          </a>
+        </div>
+
+        <!-- User Badge -->
+        <div class="user-info">
+          <a href="/user/${this.comment.uid}" class="user-name">${this.profiles[this.comment.uid].full_name}</a>
+          <div class="user-badges">
+          </div>
+        </div>
+
+      </div>
+      <!-- Comment Data-->
+      <div class="comment-content">
+        <span class="tip"></span>
+
+        <div class="comment-body">
+
+          <section class="comment_body">
+            ${this.comment.body}
+          </section>
+
+          <ul class="links inline">
+            <li class="comment-delete first">
+              <a
+                href="/api/redhat_comment/delete/${this.comment.cid}"
+                class="use-ajax ajax-processed">
+                <span>delete</span>
+              </a>
+            </li>
+            <li class="comment-edit">
+              <a
+                href="/ajax_comments/edit/${this.comment.cid}"
+                class="use-ajax ajax-comment-edit ajax-processed">
+                <span>edit</span>
+              </a>
+            </li>
+            <li class="comment-reply last">
+              <a
+                href="/ajax_comments/reply/${this.comment.uid}/${this.comment.cid}"
+                class="use-ajax ajax-comment-reply comment-reply-private ajax-processed"
+                id="reply-${this.comment.cid}">
+                Reply privately
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <slot></slot>
+</div>

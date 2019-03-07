@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RHElements: rh-comments Demo</title>
+
+  <noscript>
+    <link href="../../rhelement/rhelement-noscript.min.css" rel="stylesheet">
+  </noscript>
+
+  <link href="../../rhelement/rhelement.min.css" rel="stylesheet">
+
+  <!-- uncomment the es5-adapter if you're using the umd version -->
+  <script src="/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script src="/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+  <script>require(['../rh-comments.umd.js'])</script>
+
+
+</head>
+<body>
+  Page body stuff here.
+  <rh-comments
+    page-id="637583"
+    id="rhpage-comments"
+    page="1"
+    page_size="10"
+    show_pager="0"
+    load_more="0"
+  ></rh-comments>
+
+  <script>
+    /* Added test data since not everyone is running a local service to test against. */
+
+    /* A few comments */
+    var testData1 = {
+      "page": 1,
+      "page_size": 20,
+      "nid": "1234",
+      "comment_count": 4,
+      "comments": [
+        {
+          "cid": "123",
+          "pid": "0",
+          "uid": "2",
+          "subject": "This is comment title #1",
+          "created": "1387036005",
+          "changed": "1387036005",
+          "body": "<p>This is a sample comment that might include some level of rich text.</p>\n",
+          "private": "0",
+          "classes": "",
+          "children": [
+            {
+              "cid": "124",
+              "pid": "123",
+              "uid": "3",
+              "subject": "Hi Random user,",
+              "created": "1387127580",
+              "changed": "1387127625",
+              "body": "<p>Hi Random user,</p>\n<p>This is my multiline response. Note that I have nothing to say here, I must be tired..</p>\n<p>There's a lot of text here though, so hopefully this will allow for thematic experimentation.</p>\n<pre><code># $ rm -rf / && init 6 \n</code></pre><p>This provides useful debugging data.</p>\n<p>Thanks!</p>\n",
+              "private": "0",
+              "classes": ""
+            }
+          ]
+        },
+        {
+          "cid": "125",
+          "pid": "0",
+          "uid": "2",
+          "subject": "Testing mixed privacy and nesting,",
+          "created": "1387127580",
+          "changed": "1387127625",
+          "body": "<h1>Test of many different tags follows.</h1> <p><ul><li>List items are novel.</li><li>Here we prove they work</li></ul><table class=\"data\"><tr><th>Entry Header 1</th><th>Entry Header 2</th></tr><tr><td>Entry First Line 1</td><td>Entry First Line 2</td></tr><tr><td>Entry Line 1</td><td>Entry Line 2</td></tr></table>",
+          "private": "0",
+          "classes": ""
+        }
+      ],
+      "profiles": {
+        "3": {
+          "profile_img": "https://access.redhat.com/sites/all/themes/kcs/images/default-user.png",
+          "full_name": "Random User",
+          "username": "random_username",
+          "badges": [
+            {
+              "badge_id": "23",
+              "badge_name": "Red Hat"
+            },
+            {
+              "badge_id": "63",
+              "badge_name": "Guru"
+            },
+            {
+              "badge_id": "111",
+              "badge_name": "RHCSA-RHOS"
+            },
+            {
+              "badge_id": "141",
+              "badge_name": "RHCVA"
+            },
+            {
+              "badge_id": "151",
+              "badge_name": "RHCE"
+            }
+          ]
+        },
+        "2": {
+          "profile_img": "https://access.redhat.com/sites/all/themes/kcs/images/default-user.png",
+          "full_name": "Another User",
+          "username": "support@redhat-or-elsewhere.com",
+          "badges": [
+            {
+              "badge_id": "23",
+              "badge_name": "Red Hat"
+            },
+            {
+              "badge_id": "93",
+              "badge_name": "Pro"
+            }
+          ]
+        }
+      }
+    };
+
+    /* An effective second page of comments */
+    var testData2 = {
+      "page": 1,
+      "page_size": 20,
+      "nid": "1234",
+      "comment_count": 4,
+      "comments": [
+        {
+          "cid": "126",
+          "pid": "125",
+          "uid": "3",
+          "subject": "Here we can see a private comment",
+          "created": "1387127791",
+          "changed": "1387127791",
+          "body": "<p>Here we can see a private comment. These should be visually distinguished easily from non-private comments.</p>\n",
+          "private": "1",
+          "classes": "private-comment-wrapper",
+          "children": [
+            {
+              "cid": "127",
+              "pid": "126",
+              "uid": "2",
+              "subject": "A response to a private comment!",
+              "created": "1387196389",
+              "changed": "1387196389",
+              "body": "<p>A response to a private comment!</p>\n",
+              "private": "1",
+              "classes": "private-comment-wrapper"
+            }
+          ]
+        }
+
+      ],
+      "profiles": {
+        "3": {
+          "profile_img": "https://access.redhat.com/sites/all/themes/kcs/images/default-user.png",
+          "full_name": "Random User",
+          "username": "random_username",
+          "badges": [
+            {
+              "badge_id": "23",
+              "badge_name": "Red Hat"
+            },
+            {
+              "badge_id": "63",
+              "badge_name": "Guru"
+            },
+            {
+              "badge_id": "111",
+              "badge_name": "RHCSA-RHOS"
+            },
+            {
+              "badge_id": "141",
+              "badge_name": "RHCVA"
+            },
+            {
+              "badge_id": "151",
+              "badge_name": "RHCE"
+            }
+          ]
+        },
+        "2": {
+          "profile_img": "https://access.redhat.com/sites/all/themes/kcs/images/default-user.png",
+          "full_name": "Another User",
+          "username": "support@redhat-or-elsewhere.com",
+          "badges": [
+            {
+              "badge_id": "23",
+              "badge_name": "Red Hat"
+            },
+            {
+              "badge_id": "93",
+              "badge_name": "Pro"
+            }
+          ]
+        }
+      }
+    };
+
+    // Define global PFElement configuration object/state.
+    let pfElementsConfig = {
+      pfelements: {
+        host: 'http://localhost',
+        user: {
+          username: 'jason.smith',
+          firstname: 'Jason',
+          lastname: 'Smith',
+          uid: '12345'
+        }
+      },
+      rhComments: {
+        rest: {
+          create: 'http://localhost/api/redhat_comments',
+          read:   'http://localhost/api/redhat_comments',
+          index:  'http://localhost/api/redhat_comment.json',
+          update: 'http://localhost/api/redhat_comments',
+          delete: 'http://localhost/api/redhat_comments'
+        }
+      }
+    };
+
+    /**
+     * I can put that global config in the top window namespace, and just reference it directly, but that smells bad
+     * because there's no namespace protection and we're just making a mess.
+     *
+     * What I've done here is a quick and dirty event handler on the page load. When the component "connects", it throws
+     * an event. I catch it and use it to send config data back.
+     *
+     * I can create a component whose sole responsibility is to consolidate configuration and distribute it through
+     * events/messages. This way the library "owns" the data, the schema and the data sovereignty. The downside is that
+     * there is a fair amount of code and CPU overhead. There's a fair amount of "stuff" to work out to make that clean
+     * so... I just did the second option above.
+     *
+     */
+
+    /* Use REST calls */
+    document.addEventListener('rhconfig-query', function(e) {
+      e.srcElement.config = pfElementsConfig;
+    });
+
+    // rhc.parseCommentData(testData1);
+
+    //$('.rh-comments-load-more).
+    /* Load more comments after 5 seconds */
+    // window.setTimeout(
+    //   function() {
+    //     console.log("adding more comments");
+    //     document.querySelector('rh-comments')[0].parseCommentData(testData2);
+    //   },
+    //   2000
+    // );
+
+
+  </script>
+</body>
+</html>

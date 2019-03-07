@@ -1,0 +1,440 @@
+@import "../../pfe-sass/pfe-sass";
+
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.comment-wrapper {
+  font-family: "Overpass", "Open Sans", Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: left;
+
+  .comment-inner {
+    padding-left: 124px;
+    border: 1px solid #c00;
+    margin-top: 14px;
+
+    pfe-datetime {
+      float: right;
+    }
+
+    span.badge {
+      border-radius: 0;
+      clear: both;
+      display: block;
+      background: none;
+      color: #4c4c4c;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #d1d1d1;
+      margin: 0 0 4px;
+      white-space: normal;
+      font-size: x-small;
+      letter-spacing: -0.020em;
+    }
+
+    .comment-body {
+      p {
+        font-family: Overpass, "Open Sans", Helvetica, sans-serif;
+        margin-bottom: 1rem;
+        line-height: 1.5em;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #252525;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+
+  .comment-submitted {
+    display: block;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 400;
+    color: #252525;
+  }
+
+  .user-picture {
+    width: 80px;
+    height: 140px;
+    margin-left: -110px;
+    float: left;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .thumbnail .user-initials {
+      width: 80px;
+      height: 80px;
+      line-height: 80px
+    }
+  }
+
+  .thumbnail {
+    text-decoration: none;
+
+    :hover, .thumbnail:focus {
+      text-decoration: none
+    }
+
+    .user-initials {
+      position: relative;
+      display: block;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      background: #8d8d8d;
+      color: #fff;
+      text-transform: uppercase;
+
+      > span {
+        z-index: 2;
+        position: relative
+      }
+
+      svg {
+        z-index: 1;
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%
+      }
+    }
+
+    .user-initials.design-1.purple {
+      background: #3B0083;
+      background: -moz-linear-gradient(-45deg, #8869B3 0%, #8869B3 9%, #7551A6 10%, #7551A6 19%, #3B0083 20%, #3B0083 34%, #7551A6 35%, #7551A6 44%, #8869B3 45%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 89%, #8869B3 90%, #8869B3 94%, #9C82C0 95%, #9C82C0 100%);
+      background: -webkit-linear-gradient(-45deg, #8869B3 0%, #8869B3 9%, #7551A6 10%, #7551A6 19%, #3B0083 20%, #3B0083 34%, #7551A6 35%, #7551A6 44%, #8869B3 45%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 89%, #8869B3 90%, #8869B3 94%, #9C82C0 95%, #9C82C0 100%);
+      background: linear-gradient(135deg, #8869b3 0%, #8869b3 9%, #7551a6 10%, #7551a6 19%, #3b0083 20%, #3b0083 34%, #7551a6 35%, #7551a6 44%, #8869b3 45%, #8869b3 54%, #7551a6 55%, #7551a6 59%, #3b0083 60%, #3b0083 89%, #8869b3 90%, #8869b3 94%, #9c82c0 95%, #9c82c0 100%)
+    }
+
+    .user-initials.design-1.purple svg path,
+    .user-initials.design-1.purple svg ellipse {
+      fill: #7551A6
+    }
+
+    .user-initials.design-1.teal {
+      background: #007A87;
+      background: -moz-linear-gradient(-45deg, #68AFB6 0%, #68AFB6 9%, #36959E 10%, #36959E 19%, #007A87 20%, #007A87 34%, #36959E 35%, #36959E 44%, #68AFB6 45%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 89%, #68AFB6 90%, #68AFB6 94%, #9ACACF 95%, #9ACACF 100%);
+      background: -webkit-linear-gradient(-45deg, #68AFB6 0%, #68AFB6 9%, #36959E 10%, #36959E 19%, #007A87 20%, #007A87 34%, #36959E 35%, #36959E 44%, #68AFB6 45%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 89%, #68AFB6 90%, #68AFB6 94%, #9ACACF 95%, #9ACACF 100%);
+      background: linear-gradient(135deg, #68afb6 0%, #68afb6 9%, #36959e 10%, #36959e 19%, #007a87 20%, #007a87 34%, #36959e 35%, #36959e 44%, #68afb6 45%, #68afb6 54%, #36959e 55%, #36959e 59%, #007a87 60%, #007a87 89%, #68afb6 90%, #68afb6 94%, #9acacf 95%, #9acacf 100%)
+    }
+
+    .user-initials.design-1.teal svg path,
+    .user-initials.design-1.teal svg ellipse {
+      fill: #36959E
+    }
+
+    .user-initials.design-1.dk-blue {
+      background: #004153;
+      background: -moz-linear-gradient(-45deg, #4E7A86 0%, #4E7A86 9%, #1B5564 10%, #1B5564 19%, #004153 20%, #004153 34%, #1B5564 35%, #1B5564 44%, #4E7A86 45%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 89%, #4E7A86 90%, #4E7A86 94%, #80A0A9 95%, #80A0A9 100%);
+      background: -webkit-linear-gradient(-45deg, #4E7A86 0%, #4E7A86 9%, #1B5564 10%, #1B5564 19%, #004153 20%, #004153 34%, #1B5564 35%, #1B5564 44%, #4E7A86 45%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 89%, #4E7A86 90%, #4E7A86 94%, #80A0A9 95%, #80A0A9 100%);
+      background: linear-gradient(135deg, #4e7a86 0%, #4e7a86 9%, #1b5564 10%, #1b5564 19%, #004153 20%, #004153 34%, #1b5564 35%, #1b5564 44%, #4e7a86 45%, #4e7a86 54%, #1b5564 55%, #1b5564 59%, #004153 60%, #004153 89%, #4e7a86 90%, #4e7a86 94%, #80a0a9 95%, #80a0a9 100%)
+    }
+
+    .user-initials.design-1.dk-blue svg path,
+    .user-initials.design-1.dk-blue svg ellipse {
+      fill: #1B5564
+    }
+
+    .user-initials.design-1.orange {
+      background: #ec7a08;
+      background: -moz-linear-gradient(-45deg, #f5c255 0%, #f5c255 9%, #f0ab00 10%, #f0ab00 19%, #ec7a08 20%, #ec7a08 34%, #f0ab00 35%, #f0ab00 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f5c255 90%, #f5c255 94%, #f8d384 95%, #f8d384 100%);
+      background: -webkit-linear-gradient(-45deg, #f5c255 0%, #f5c255 9%, #f0ab00 10%, #f0ab00 19%, #ec7a08 20%, #ec7a08 34%, #f0ab00 35%, #f0ab00 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f5c255 90%, #f5c255 94%, #f8d384 95%, #f8d384 100%);
+      background: linear-gradient(135deg, #f5c255 0%, #f5c255 9%, #f0ab00 10%, #f0ab00 19%, #ec7a08 20%, #ec7a08 34%, #f0ab00 35%, #f0ab00 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f5c255 90%, #f5c255 94%, #f8d384 95%, #f8d384 100%)
+    }
+
+    .user-initials.design-1.orange svg path,
+    .user-initials.design-1.orange svg ellipse {
+      fill: #f0ab00
+    }
+
+    .user-initials.design-1.blue {
+      background: #00559B;
+      background: -moz-linear-gradient(-45deg, #0088CE 0%, #0088CE 9%, #006FB5 10%, #006FB5 19%, #00559B 20%, #00559B 34%, #006FB5 35%, #006FB5 44%, #0088CE 45%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 89%, #0088CE 90%, #0088CE 94%, #00B9E4 95%, #00B9E4 100%);
+      background: -webkit-linear-gradient(-45deg, #0088CE 0%, #0088CE 9%, #006FB5 10%, #006FB5 19%, #00559B 20%, #00559B 34%, #006FB5 35%, #006FB5 44%, #0088CE 45%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 89%, #0088CE 90%, #0088CE 94%, #00B9E4 95%, #00B9E4 100%);
+      background: linear-gradient(135deg, #0088ce 0%, #0088ce 9%, #006fb5 10%, #006fb5 19%, #00559b 20%, #00559b 34%, #006fb5 35%, #006fb5 44%, #0088ce 45%, #0088ce 54%, #006fb5 55%, #006fb5 59%, #00559b 60%, #00559b 89%, #0088ce 90%, #0088ce 94%, #00b9e4 95%, #00b9e4 100%)
+    }
+
+    .user-initials.design-1.blue svg path,
+    .user-initials.design-1.blue svg ellipse {
+      fill: #006FB5
+    }
+
+    .user-initials.design-2.purple {
+      background: #3B0083;
+      background: -moz-linear-gradient(-45deg, #3B0083 0%, #3B0083 14%, #9C82C0 15%, #9C82C0 19%, #8869B3 20%, #8869B3 29%, #7551A6 30%, #7551A6 39%, #3B0083 40%, #3B0083 69%, #8869B3 70%, #8869B3 79%, #3B0083 80%, #3B0083 100%);
+      background: -webkit-linear-gradient(-45deg, #3B0083 0%, #3B0083 14%, #9C82C0 15%, #9C82C0 19%, #8869B3 20%, #8869B3 29%, #7551A6 30%, #7551A6 39%, #3B0083 40%, #3B0083 69%, #8869B3 70%, #8869B3 79%, #3B0083 80%, #3B0083 100%);
+      background: linear-gradient(135deg, #3b0083 0%, #3b0083 14%, #9c82c0 15%, #9c82c0 19%, #8869b3 20%, #8869b3 29%, #7551a6 30%, #7551a6 39%, #3b0083 40%, #3b0083 69%, #8869b3 70%, #8869b3 79%, #3b0083 80%, #3b0083 100%)
+    }
+
+    .user-initials.design-2.purple svg path,
+    .user-initials.design-2.purple svg ellipse {
+      fill: #8869B3
+    }
+
+    .user-initials.design-2.teal {
+      background: #007A87;
+      background: -moz-linear-gradient(-45deg, #007A87 0%, #007A87 14%, #9ACACF 15%, #9ACACF 19%, #68AFB6 20%, #68AFB6 29%, #36959E 30%, #36959E 39%, #007A87 40%, #007A87 69%, #68AFB6 70%, #68AFB6 79%, #007A87 80%, #007A87 100%);
+      background: -webkit-linear-gradient(-45deg, #007A87 0%, #007A87 14%, #9ACACF 15%, #9ACACF 19%, #68AFB6 20%, #68AFB6 29%, #36959E 30%, #36959E 39%, #007A87 40%, #007A87 69%, #68AFB6 70%, #68AFB6 79%, #007A87 80%, #007A87 100%);
+      background: linear-gradient(135deg, #007a87 0%, #007a87 14%, #9acacf 15%, #9acacf 19%, #68afb6 20%, #68afb6 29%, #36959e 30%, #36959e 39%, #007a87 40%, #007a87 69%, #68afb6 70%, #68afb6 79%, #007a87 80%, #007a87 100%)
+    }
+
+    .user-initials.design-2.teal svg path,
+    .user-initials.design-2.teal svg ellipse {
+      fill: #68AFB6
+    }
+
+    .user-initials.design-2.dk-blue {
+      background: #004153;
+      background: -moz-linear-gradient(-45deg, #004153 0%, #004153 14%, #80A0A9 15%, #80A0A9 19%, #4E7A86 20%, #4E7A86 29%, #1B5564 30%, #1B5564 39%, #004153 40%, #004153 69%, #4E7A86 70%, #4E7A86 79%, #004153 80%, #004153 100%);
+      background: -webkit-linear-gradient(-45deg, #004153 0%, #004153 14%, #80A0A9 15%, #80A0A9 19%, #4E7A86 20%, #4E7A86 29%, #1B5564 30%, #1B5564 39%, #004153 40%, #004153 69%, #4E7A86 70%, #4E7A86 79%, #004153 80%, #004153 100%);
+      background: linear-gradient(135deg, #004153 0%, #004153 14%, #80a0a9 15%, #80a0a9 19%, #4e7a86 20%, #4e7a86 29%, #1b5564 30%, #1b5564 39%, #004153 40%, #004153 69%, #4e7a86 70%, #4e7a86 79%, #004153 80%, #004153 100%)
+    }
+
+    .user-initials.design-2.dk-blue svg path,
+    .user-initials.design-2.dk-blue svg ellipse {
+      fill: #4E7A86
+    }
+
+    .user-initials.design-2.orange {
+      background: #ec7a08;
+      background: -moz-linear-gradient(-45deg, #ec7a08 0%, #ec7a08 14%, #f8d384 15%, #f8d384 19%, #f5c255 20%, #f5c255 29%, #f0ab00 30%, #f0ab00 39%, #ec7a08 40%, #ec7a08 69%, #f5c255 70%, #f5c255 79%, #ec7a08 80%, #ec7a08 100%);
+      background: -webkit-linear-gradient(-45deg, #ec7a08 0%, #ec7a08 14%, #f8d384 15%, #f8d384 19%, #f5c255 20%, #f5c255 29%, #f0ab00 30%, #f0ab00 39%, #ec7a08 40%, #ec7a08 69%, #f5c255 70%, #f5c255 79%, #ec7a08 80%, #ec7a08 100%);
+      background: linear-gradient(135deg, #ec7a08 0%, #ec7a08 14%, #f8d384 15%, #f8d384 19%, #f5c255 20%, #f5c255 29%, #f0ab00 30%, #f0ab00 39%, #ec7a08 40%, #ec7a08 69%, #f5c255 70%, #f5c255 79%, #ec7a08 80%, #ec7a08 100%)
+    }
+
+    .user-initials.design-2.orange svg path,
+    .user-initials.design-2.orange svg ellipse {
+      fill: #f5c255
+    }
+
+    .user-initials.design-2.blue {
+      background: #00559B;
+      background: -moz-linear-gradient(-45deg, #00559B 0%, #00559B 14%, #00B9E4 15%, #00B9E4 19%, #0088CE 20%, #0088CE 29%, #006FB5 30%, #006FB5 39%, #00559B 40%, #00559B 69%, #0088CE 70%, #0088CE 79%, #00559B 80%, #00559B 100%);
+      background: -webkit-linear-gradient(-45deg, #00559B 0%, #00559B 14%, #00B9E4 15%, #00B9E4 19%, #0088CE 20%, #0088CE 29%, #006FB5 30%, #006FB5 39%, #00559B 40%, #00559B 69%, #0088CE 70%, #0088CE 79%, #00559B 80%, #00559B 100%);
+      background: linear-gradient(135deg, #00559b 0%, #00559b 14%, #00b9e4 15%, #00b9e4 19%, #0088ce 20%, #0088ce 29%, #006fb5 30%, #006fb5 39%, #00559b 40%, #00559b 69%, #0088ce 70%, #0088ce 79%, #00559b 80%, #00559b 100%)
+    }
+
+    .user-initials.design-2.blue svg path,
+    .user-initials.design-2.blue svg ellipse {
+      fill: #0088CE
+    }
+
+    .user-initials.design-3.purple {
+      background: #3B0083;
+      background: -moz-linear-gradient(-45deg, #9C82C0 0%, #9C82C0 9%, #8869B3 10%, #8869B3 34%, #3B0083 35%, #3B0083 59%, #7551A6 60%, #7551A6 69%, #8869B3 70%, #8869B3 100%);
+      background: -webkit-linear-gradient(-45deg, #9C82C0 0%, #9C82C0 9%, #8869B3 10%, #8869B3 34%, #3B0083 35%, #3B0083 59%, #7551A6 60%, #7551A6 69%, #8869B3 70%, #8869B3 100%);
+      background: linear-gradient(135deg, #9c82c0 0%, #9c82c0 9%, #8869b3 10%, #8869b3 34%, #3b0083 35%, #3b0083 59%, #7551a6 60%, #7551a6 69%, #8869b3 70%, #8869b3 100%)
+    }
+
+    .user-initials.design-3.purple svg path, .user-initials.design-3.purple svg ellipse {
+      fill: #3B0083
+    }
+
+    .user-initials.design-3.teal {
+      background: #007A87;
+      background: -moz-linear-gradient(-45deg, #9ACACF 0%, #9ACACF 9%, #68AFB6 10%, #68AFB6 34%, #007A87 35%, #007A87 59%, #36959E 60%, #36959E 69%, #68AFB6 70%, #68AFB6 100%);
+      background: -webkit-linear-gradient(-45deg, #9ACACF 0%, #9ACACF 9%, #68AFB6 10%, #68AFB6 34%, #007A87 35%, #007A87 59%, #36959E 60%, #36959E 69%, #68AFB6 70%, #68AFB6 100%);
+      background: linear-gradient(135deg, #9acacf 0%, #9acacf 9%, #68afb6 10%, #68afb6 34%, #007a87 35%, #007a87 59%, #36959e 60%, #36959e 69%, #68afb6 70%, #68afb6 100%)
+    }
+
+    .user-initials.design-3.teal svg path, .user-initials.design-3.teal svg ellipse {
+      fill: #007A87
+    }
+
+    .user-initials.design-3.dk-blue {
+      background: #004153;
+      background: -moz-linear-gradient(-45deg, #80A0A9 0%, #80A0A9 9%, #4E7A86 10%, #4E7A86 34%, #004153 35%, #004153 59%, #1B5564 60%, #1B5564 69%, #4E7A86 70%, #4E7A86 100%);
+      background: -webkit-linear-gradient(-45deg, #80A0A9 0%, #80A0A9 9%, #4E7A86 10%, #4E7A86 34%, #004153 35%, #004153 59%, #1B5564 60%, #1B5564 69%, #4E7A86 70%, #4E7A86 100%);
+      background: linear-gradient(135deg, #80a0a9 0%, #80a0a9 9%, #4e7a86 10%, #4e7a86 34%, #004153 35%, #004153 59%, #1b5564 60%, #1b5564 69%, #4e7a86 70%, #4e7a86 100%)
+    }
+
+    .user-initials.design-3.dk-blue svg path, .user-initials.design-3.dk-blue svg ellipse {
+      fill: #004153
+    }
+
+    .user-initials.design-3.orange {
+      background: #ec7a08;
+      background: -moz-linear-gradient(-45deg, #f8d384 0%, #f8d384 9%, #f5c255 10%, #f5c255 34%, #ec7a08 35%, #ec7a08 59%, #f0ab00 60%, #f0ab00 69%, #f5c255 70%, #f5c255 100%);
+      background: -webkit-linear-gradient(-45deg, #f8d384 0%, #f8d384 9%, #f5c255 10%, #f5c255 34%, #ec7a08 35%, #ec7a08 59%, #f0ab00 60%, #f0ab00 69%, #f5c255 70%, #f5c255 100%);
+      background: linear-gradient(135deg, #f8d384 0%, #f8d384 9%, #f5c255 10%, #f5c255 34%, #ec7a08 35%, #ec7a08 59%, #f0ab00 60%, #f0ab00 69%, #f5c255 70%, #f5c255 100%)
+    }
+
+    .user-initials.design-3.orange svg path, .user-initials.design-3.orange svg ellipse {
+      fill: #ec7a08
+    }
+
+    .user-initials.design-3.blue {
+      background: #00559B;
+      background: -moz-linear-gradient(-45deg, #00B9E4 0%, #00B9E4 9%, #0088CE 10%, #0088CE 34%, #00559B 35%, #00559B 59%, #006FB5 60%, #006FB5 69%, #0088CE 70%, #0088CE 100%);
+      background: -webkit-linear-gradient(-45deg, #00B9E4 0%, #00B9E4 9%, #0088CE 10%, #0088CE 34%, #00559B 35%, #00559B 59%, #006FB5 60%, #006FB5 69%, #0088CE 70%, #0088CE 100%);
+      background: linear-gradient(135deg, #00b9e4 0%, #00b9e4 9%, #0088ce 10%, #0088ce 34%, #00559b 35%, #00559b 59%, #006fb5 60%, #006fb5 69%, #0088ce 70%, #0088ce 100%)
+    }
+
+    .user-initials.design-3.blue svg path, .user-initials.design-3.blue svg ellipse {
+      fill: #00559B
+    }
+
+    .user-initials.design-4.purple {
+      background: #3B0083;
+      background: -moz-linear-gradient(-45deg, #7551A6 0%, #7551A6 9%, #3B0083 10%, #3B0083 44%, #8869B3 45%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 79%, #7551A6 80%, #7551A6 100%);
+      background: -webkit-linear-gradient(-45deg, #7551A6 0%, #7551A6 9%, #3B0083 10%, #3B0083 44%, #8869B3 45%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 79%, #7551A6 80%, #7551A6 100%);
+      background: linear-gradient(135deg, #7551a6 0%, #7551a6 9%, #3b0083 10%, #3b0083 44%, #8869b3 45%, #8869b3 54%, #7551a6 55%, #7551a6 59%, #3b0083 60%, #3b0083 79%, #7551a6 80%, #7551a6 100%)
+    }
+
+    .user-initials.design-4.purple svg path, .user-initials.design-4.purple svg ellipse {
+      fill: #9C82C0
+    }
+
+    .user-initials.design-4.teal {
+      background: #007A87;
+      background: -moz-linear-gradient(-45deg, #36959E 0%, #36959E 9%, #007A87 10%, #007A87 44%, #68AFB6 45%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 79%, #36959E 80%, #36959E 100%);
+      background: -webkit-linear-gradient(-45deg, #36959E 0%, #36959E 9%, #007A87 10%, #007A87 44%, #68AFB6 45%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 79%, #36959E 80%, #36959E 100%);
+      background: linear-gradient(135deg, #36959e 0%, #36959e 9%, #007a87 10%, #007a87 44%, #68afb6 45%, #68afb6 54%, #36959e 55%, #36959e 59%, #007a87 60%, #007a87 79%, #36959e 80%, #36959e 100%)
+    }
+
+    .user-initials.design-4.teal svg path, .user-initials.design-4.teal svg ellipse {
+      fill: #9ACACF
+    }
+
+    .user-initials.design-4.dk-blue {
+      background: #004153;
+      background: -moz-linear-gradient(-45deg, #1B5564 0%, #1B5564 9%, #004153 10%, #004153 44%, #4E7A86 45%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 79%, #1B5564 80%, #1B5564 100%);
+      background: -webkit-linear-gradient(-45deg, #1B5564 0%, #1B5564 9%, #004153 10%, #004153 44%, #4E7A86 45%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 79%, #1B5564 80%, #1B5564 100%);
+      background: linear-gradient(135deg, #1b5564 0%, #1b5564 9%, #004153 10%, #004153 44%, #4e7a86 45%, #4e7a86 54%, #1b5564 55%, #1b5564 59%, #004153 60%, #004153 79%, #1b5564 80%, #1b5564 100%)
+    }
+
+    .user-initials.design-4.dk-blue svg path, .user-initials.design-4.dk-blue svg ellipse {
+      fill: #80A0A9
+    }
+
+    .user-initials.design-4.orange {
+      background: #ec7a08;
+      background: -moz-linear-gradient(-45deg, #f0ab00 0%, #f0ab00 9%, #ec7a08 10%, #ec7a08 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 79%, #f0ab00 80%, #f0ab00 100%);
+      background: -webkit-linear-gradient(-45deg, #f0ab00 0%, #f0ab00 9%, #ec7a08 10%, #ec7a08 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 79%, #f0ab00 80%, #f0ab00 100%);
+      background: linear-gradient(135deg, #f0ab00 0%, #f0ab00 9%, #ec7a08 10%, #ec7a08 44%, #f5c255 45%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 79%, #f0ab00 80%, #f0ab00 100%)
+    }
+
+    .user-initials.design-4.orange svg path, .user-initials.design-4.orange svg ellipse {
+      fill: #f8d384
+    }
+
+    .user-initials.design-4.blue {
+      background: #00559B;
+      background: -moz-linear-gradient(-45deg, #006FB5 0%, #006FB5 9%, #00559B 10%, #00559B 44%, #0088CE 45%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 79%, #006FB5 80%, #006FB5 100%);
+      background: -webkit-linear-gradient(-45deg, #006FB5 0%, #006FB5 9%, #00559B 10%, #00559B 44%, #0088CE 45%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 79%, #006FB5 80%, #006FB5 100%);
+      background: linear-gradient(135deg, #006fb5 0%, #006fb5 9%, #00559b 10%, #00559b 44%, #0088ce 45%, #0088ce 54%, #006fb5 55%, #006fb5 59%, #00559b 60%, #00559b 79%, #006fb5 80%, #006fb5 100%)
+    }
+
+    .user-initials.design-4.blue svg path, .user-initials.design-4.blue svg ellipse {
+      fill: #00B9E4
+    }
+
+    .user-initials.design-5.purple {
+      background: #3B0083;
+      background: -moz-linear-gradient(-45deg, #8869B3 0%, #8869B3 9%, #3B0083 10%, #3B0083 39%, #7551A6 40%, #7551A6 49%, #8869B3 50%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 89%, #7551A6 90%, #7551A6 100%);
+      background: -webkit-linear-gradient(-45deg, #8869B3 0%, #8869B3 9%, #3B0083 10%, #3B0083 39%, #7551A6 40%, #7551A6 49%, #8869B3 50%, #8869B3 54%, #7551A6 55%, #7551A6 59%, #3B0083 60%, #3B0083 89%, #7551A6 90%, #7551A6 100%);
+      background: linear-gradient(135deg, #8869b3 0%, #8869b3 9%, #3b0083 10%, #3b0083 39%, #7551a6 40%, #7551a6 49%, #8869b3 50%, #8869b3 54%, #7551a6 55%, #7551a6 59%, #3b0083 60%, #3b0083 89%, #7551a6 90%, #7551a6 100%)
+    }
+
+    .user-initials.design-5.purple svg path, .user-initials.design-5.purple svg ellipse {
+      fill: #8869B3
+    }
+
+    .user-initials.design-5.teal {
+      background: #007A87;
+      background: -moz-linear-gradient(-45deg, #68AFB6 0%, #68AFB6 9%, #007A87 10%, #007A87 39%, #36959E 40%, #36959E 49%, #68AFB6 50%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 89%, #36959E 90%, #36959E 100%);
+      background: -webkit-linear-gradient(-45deg, #68AFB6 0%, #68AFB6 9%, #007A87 10%, #007A87 39%, #36959E 40%, #36959E 49%, #68AFB6 50%, #68AFB6 54%, #36959E 55%, #36959E 59%, #007A87 60%, #007A87 89%, #36959E 90%, #36959E 100%);
+      background: linear-gradient(135deg, #68afb6 0%, #68afb6 9%, #007a87 10%, #007a87 39%, #36959e 40%, #36959e 49%, #68afb6 50%, #68afb6 54%, #36959e 55%, #36959e 59%, #007a87 60%, #007a87 89%, #36959e 90%, #36959e 100%)
+    }
+
+    .user-initials.design-5.teal svg path, .user-initials.design-5.teal svg ellipse {
+      fill: #68AFB6
+    }
+
+    .user-initials.design-5.dk-blue {
+      background: #004153;
+      background: -moz-linear-gradient(-45deg, #4E7A86 0%, #4E7A86 9%, #004153 10%, #004153 39%, #1B5564 40%, #1B5564 49%, #4E7A86 50%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 89%, #1B5564 90%, #1B5564 100%);
+      background: -webkit-linear-gradient(-45deg, #4E7A86 0%, #4E7A86 9%, #004153 10%, #004153 39%, #1B5564 40%, #1B5564 49%, #4E7A86 50%, #4E7A86 54%, #1B5564 55%, #1B5564 59%, #004153 60%, #004153 89%, #1B5564 90%, #1B5564 100%);
+      background: linear-gradient(135deg, #4e7a86 0%, #4e7a86 9%, #004153 10%, #004153 39%, #1b5564 40%, #1b5564 49%, #4e7a86 50%, #4e7a86 54%, #1b5564 55%, #1b5564 59%, #004153 60%, #004153 89%, #1b5564 90%, #1b5564 100%)
+    }
+
+    .user-initials.design-5.dk-blue svg path, .user-initials.design-5.dk-blue svg ellipse {
+      fill: #4E7A86
+    }
+
+    .user-initials.design-5.orange {
+      background: #ec7a08;
+      background: -moz-linear-gradient(-45deg, #f5c255 0%, #f5c255 9%, #ec7a08 10%, #ec7a08 39%, #f0ab00 40%, #f0ab00 49%, #f5c255 50%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f0ab00 90%, #f0ab00 100%);
+      background: -webkit-linear-gradient(-45deg, #f5c255 0%, #f5c255 9%, #ec7a08 10%, #ec7a08 39%, #f0ab00 40%, #f0ab00 49%, #f5c255 50%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f0ab00 90%, #f0ab00 100%);
+      background: linear-gradient(135deg, #f5c255 0%, #f5c255 9%, #ec7a08 10%, #ec7a08 39%, #f0ab00 40%, #f0ab00 49%, #f5c255 50%, #f5c255 54%, #f0ab00 55%, #f0ab00 59%, #ec7a08 60%, #ec7a08 89%, #f0ab00 90%, #f0ab00 100%)
+    }
+
+    .user-initials.design-5.orange svg path, .user-initials.design-5.orange svg ellipse {
+      fill: #f5c255
+    }
+
+    .user-initials.design-5.blue {
+      background: #00559B;
+      background: -moz-linear-gradient(-45deg, #0088CE 0%, #0088CE 9%, #00559B 10%, #00559B 39%, #006FB5 40%, #006FB5 49%, #0088CE 50%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 89%, #006FB5 90%, #006FB5 100%);
+      background: -webkit-linear-gradient(-45deg, #0088CE 0%, #0088CE 9%, #00559B 10%, #00559B 39%, #006FB5 40%, #006FB5 49%, #0088CE 50%, #0088CE 54%, #006FB5 55%, #006FB5 59%, #00559B 60%, #00559B 89%, #006FB5 90%, #006FB5 100%);
+      background: linear-gradient(135deg, #0088ce 0%, #0088ce 9%, #00559b 10%, #00559b 39%, #006fb5 40%, #006fb5 49%, #0088ce 50%, #0088ce 54%, #006fb5 55%, #006fb5 59%, #00559b 60%, #00559b 89%, #006fb5 90%, #006fb5 100%)
+    }
+
+    .user-initials.design-5.blue svg path, .user-initials.design-5.blue svg ellipse {
+      fill: #0088CE
+    }
+  }
+
+  .comment .thumbnail-default .user-initials {
+    height: 60px;
+    line-height: 60px
+  }
+
+  @media (min-width: 992px) {
+    .comment .thumbnail-default .user-initials {
+      height: 80px;
+      line-height: 80px
+    }
+  }
+
+  .user-profile-sidebar .thumbnail, .author-bio .thumbnail {
+    padding: 0;
+    border: 0;
+    width: 140px;
+    margin: 0 0 9px
+  }
+
+  .user-profile-sidebar .thumbnail.thumbnail-default .user-initials, .author-bio .thumbnail.thumbnail-default .user-initials {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    font-size: 48px
+  }
+
+  .author-bio .user-picture {
+    float: left;
+    margin-left: -170px;
+    width: 140px
+  }
+}

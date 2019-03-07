@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <script src="/components/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="/components/web-component-tester/browser.js"></script>
+    <script type="module" src="../rh-comments.js"></script>
+  </head>
+  <body>
+
+    <rh-comments>
+      This is the element content.
+    </rh-comments>
+
+    <script>
+      suite('<rh-comments>', () => {
+        test('it should upgrade', () => {
+          assert.instanceOf(document.querySelector('rh-comments'), customElements.get("rh-comments", 'rh-comments should be an instance of rhComments'));
+        });
+
+        // you need to write more tests!!!
+
+      });
+    </script>
+  </body>
+</html>

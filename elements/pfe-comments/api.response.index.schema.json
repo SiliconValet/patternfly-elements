@@ -1,0 +1,212 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Comment Metadata",
+  "required": [
+    "page",
+    "page_size",
+    "nid",
+    "comment_count",
+    "comments",
+    "profiles"
+  ],
+  "properties": {
+    "page": {
+      "$id": "#/properties/page",
+      "type": "integer",
+      "title": "The pagination page",
+      "default": 0,
+      "examples": [1]
+    },
+    "page_size": {
+      "$id": "#/properties/page_size",
+      "type": "integer",
+      "title": "The pagination page size",
+      "default": 0,
+      "examples": [20]
+    },
+    "nid": {
+      "$id": "#/properties/nid",
+      "type": "string",
+      "title": "Page id",
+      "default": "",
+      "examples": ["637583"],
+      "pattern": "^(.*)$"
+    },
+    "comment_count": {
+      "$id": "#/properties/comment_count",
+      "type": "integer",
+      "title": "Comment count",
+      "default": 0,
+      "examples": [126]
+    },
+    "comments": {
+      "$id": "#/properties/comments",
+      "type": "array",
+      "title": "Comments",
+      "items": {
+        "$id": "#/properties/comments/items",
+        "type": "object",
+        "title": "The comments",
+        "required": [
+          "cid",
+          "pid",
+          "uid",
+          "subject",
+          "created",
+          "changed",
+          "body",
+          "private",
+          "classes"
+        ],
+        "properties": {
+          "cid": {
+            "$id": "#/properties/comments/items/properties/cid",
+            "type": "string",
+            "title": "Comment id",
+            "default": "",
+            "examples": ["602893"],
+            "pattern": "^(.*)$"
+          },
+          "pid": {
+            "$id": "#/properties/comments/items/properties/pid",
+            "type": "string",
+            "title": "Parent comment id",
+            "default": "",
+            "examples": ["0"],
+            "pattern": "^(.*)$"
+          },
+          "uid": {
+            "$id": "#/properties/comments/items/properties/uid",
+            "type": "string",
+            "title": "Uid",
+            "default": "",
+            "examples": ["2187883"],
+            "pattern": "^(.*)$"
+          },
+          "subject": {
+            "$id": "#/properties/comments/items/properties/subject",
+            "type": "string",
+            "title": "The Subject",
+            "default": "",
+            "examples": ["actually this did not work"],
+            "pattern": "^(.*)$"
+          },
+          "created": {
+            "$id": "#/properties/comments/items/properties/created",
+            "type": "string",
+            "title": "Created",
+            "default": "",
+            "examples": ["1387036005"],
+            "pattern": "^(.*)$"
+          },
+          "changed": {
+            "$id": "#/properties/comments/items/properties/changed",
+            "type": "string",
+            "title": "Changed",
+            "default": "",
+            "examples": ["1387036005"],
+            "pattern": "^(.*)$"
+          },
+          "body": {
+            "$id": "#/properties/comments/items/properties/body",
+            "type": "string",
+            "title": "The Body",
+            "default": "",
+            "examples": [
+              "<p>actually this did not work when I tried to do a network installation, i tried to do # redhat-upgrade-tool-cli --network 7.0 --instrepo ftp://ftp.redhat.com/pub/redhat/rhel/beta/7/x86_64/os which then started to download the packages and boot images. Also i was required to disable the existing rhel6-* official repos before starting the upgrade</p>\n"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "private": {
+            "$id": "#/properties/comments/items/properties/private",
+            "type": "string",
+            "title": "Private flag",
+            "default": "",
+            "examples": ["0"],
+            "pattern": "^(.*)$"
+          },
+          "classes": {
+            "$id": "#/properties/comments/items/properties/classes",
+            "type": "string",
+            "title": "Classes",
+            "default": "",
+            "examples": [""],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "profiles": {
+      "$id": "#/properties/profiles",
+      "type": "object",
+      "title": "Profiles",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "title": "Profile",
+          "required": ["profile_img", "full_name", "username", "badges"],
+          "properties": {
+            "profile_img": {
+              "$id": "#/properties/profiles/properties/7273/properties/profile_img",
+              "type": "string",
+              "title": "Profile img",
+              "default": "",
+              "examples": [
+                "https://access.redhat.com/sites/default/files/pictures/picture-7273-1446673747.png"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "full_name": {
+              "$id": "#/properties/profiles/properties/7273/properties/full_name",
+              "type": "string",
+              "title": "The Full_name Schema",
+              "default": "",
+              "examples": ["Bryan Yount"],
+              "pattern": "^(.*)$"
+            },
+            "username": {
+              "$id": "#/properties/profiles/properties/7273/properties/username",
+              "type": "string",
+              "title": "The Username Schema",
+              "default": "",
+              "examples": ["rhn-support-byount"],
+              "pattern": "^(.*)$"
+            },
+            "badges": {
+              "$id": "#/properties/profiles/properties/7273/properties/badges",
+              "type": "array",
+              "title": "The Badges Schema",
+              "items": {
+                "$id": "#/properties/profiles/properties/7273/properties/badges/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": ["badge_id", "badge_name"],
+                "properties": {
+                  "badge_id": {
+                    "$id": "#/properties/profiles/properties/7273/properties/badges/items/properties/badge_id",
+                    "type": "string",
+                    "title": "The Badge_id Schema",
+                    "default": "",
+                    "examples": ["23"],
+                    "pattern": "^(.*)$"
+                  },
+                  "badge_name": {
+                    "$id": "#/properties/profiles/properties/7273/properties/badges/items/properties/badge_name",
+                    "type": "string",
+                    "title": "The Badge_name Schema",
+                    "default": "",
+                    "examples": ["Red Hat"],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

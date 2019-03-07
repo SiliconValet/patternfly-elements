@@ -1,0 +1,36 @@
+{
+  "name": "@patternfly/pfe-comments",
+  "pfelement": {
+    "className": "PfeComments",
+    "elementName": "pfe-comments",
+    "files": {
+      "styles": "src/pfe-comments.scss",
+      "template": "src/pfe-comments.html",
+      "js": "src/pfe-comments.js",
+      "properties": "src/pfe-comments-properties.json"
+    }
+  },
+  "version": "1.0.0-prerelease.4",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Drupal comments element for Patternfly Elements",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "../../node_modules/.bin/gulp && ../../node_modules/.bin/prettier --ignore-path ../../.prettierignore --write '**/*.{js,json}'",
+    "dev": "../../node_modules/.bin/gulp dev",
+    "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-comments/test/"
+  },
+  "author": {
+    "name": "Jason Smith"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.9",
+    "@patternfly/pfelement": "^1.0.0-prerelease.9"
+  }
+}

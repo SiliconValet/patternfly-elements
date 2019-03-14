@@ -126,7 +126,7 @@ class PfeComments extends PFElement {
       if (this.hasAttribute("page-size")) {
         this._page_size = this.getAttribute("page-size");
       } else {
-        this._page_size = 20;
+        this._page_size = 300;
       }
     }
 
@@ -304,8 +304,8 @@ class PfeComments extends PFElement {
     for (let i = 0; i < comments.length; i++) {
       let comment = comments[i];
 
-      if (!("rhelement" in comment)) {
-        let rhElement = document.createElement("pfe-comments-comment");
+      if (!("pfelement" in comment)) {
+        let pfElement = document.createElement("pfe-comments-comment");
 
         /* If comment has flags, add a class to help with styling */
         comment.classes = "";
@@ -316,22 +316,22 @@ class PfeComments extends PFElement {
         }
 
         /* Each comment has an individually addressable ID */
-        rhElement.setAttribute("id", "comment-" + comment.cid);
+        pfElement.setAttribute("id", "comment-" + comment.cid);
 
-        rhElement.commentData = {
+        pfElement.commentData = {
           comment: comment,
           profiles: profiles
         };
-        parent.appendChild(rhElement);
+        parent.appendChild(pfElement);
 
-        comment.rhelement = rhElement;
+        comment.pfelement = pfElement;
       }
 
       if ("children" in comment) {
         PfeComments.renderComments(
           comment.children,
           profiles,
-          comment.rhelement
+          comment.pfelement
         );
       }
     }
@@ -342,9 +342,10 @@ class PfeComments extends PFElement {
    * Fetch the comment data.
    */
   getCommentData(scope) {
-    console.log("Fetching page " + scope.page + " of size " + scope.pageSize);
+    console.log("Fetching page " + scope.page + " of comments, pagesize " + scope.pageSize);
     const xhr = new XMLHttpRequest();
-
+    // Send auth cookies.
+    xhr.withCredentials = true;
     xhr.onload = function() {
       scope.parseCommentData(JSON.parse(this.responseText));
     };
@@ -393,7 +394,7 @@ console.log("Attribute "+attr+" changed to " +newVal);
       new Event("pfeconfig-query", {
         bubbles: true,
         composed: true,
-        detail: "pfe-comments",
+        detail: this.tag,
         element: this
       })
     );

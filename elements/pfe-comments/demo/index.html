@@ -2,32 +2,39 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>RHElements: rh-comments Demo</title>
+  <title>PFElements: pfe-comments Demo</title>
 
-  <noscript>
-    <link href="../../rhelement/rhelement-noscript.min.css" rel="stylesheet">
-  </noscript>
-
-  <link href="../../rhelement/rhelement.min.css" rel="stylesheet">
+  <!-- needed for CP-Theme -->
+  <link rel="stylesheet" href="http://overpass-30e2.kxcdn.com/overpass.css" />
 
   <!-- uncomment the es5-adapter if you're using the umd version -->
   <script src="/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
   <script src="/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
-  <script>require(['../rh-comments.umd.js'])</script>
 
+  <script>
+    require([
+      '../../../themes/cp-theme/cp-theme.umd.js',
+      '../pfe-comments.umd.js'
+    ]);
+  </script>
 
+  <noscript>
+    <link href="../../pfelement/pfelement-noscript.min.css" rel="stylesheet">
+  </noscript>
+
+  <link href="../../pfelement/pfelement.min.css" rel="stylesheet">
 </head>
 <body>
   Page body stuff here.
-  <rh-comments
+  <pfe-comments
     page-id="637583"
-    id="rhpage-comments"
+    id="pfepage-comments"
     page="1"
     page_size="10"
     show_pager="0"
     load_more="0"
-  ></rh-comments>
+  ></pfe-comments>
 
   <script>
     /* Added test data since not everyone is running a local service to test against. */
@@ -211,7 +218,7 @@
           uid: '12345'
         }
       },
-      rhComments: {
+      pfeComments: {
         rest: {
           create: 'http://localhost/api/redhat_comments',
           read:   'http://localhost/api/redhat_comments',
@@ -234,25 +241,22 @@
      * there is a fair amount of code and CPU overhead. There's a fair amount of "stuff" to work out to make that clean
      * so... I just did the second option above.
      *
+     * At that point, however....
+     *
+     * I think the best solution is likely to be something like redux for state manaagement, but that violates the
+     * spirit of web component isolation - as if they didn't do a great job of doing that themselves.
+     *
+     * https://github.com/krisztiankecskes/counter-native-web-component-redux Redux for wc
+     *
+     * Something like https://github.com/lastmjs/redux-store-element apparently straddles both sides of the debate, but
+     * I didn't dig into it too much.
+     *
      */
 
     /* Use REST calls */
-    document.addEventListener('rhconfig-query', function(e) {
+    document.addEventListener('pfeconfig-query', function(e) {
       e.srcElement.config = pfElementsConfig;
     });
-
-    // rhc.parseCommentData(testData1);
-
-    //$('.rh-comments-load-more).
-    /* Load more comments after 5 seconds */
-    // window.setTimeout(
-    //   function() {
-    //     console.log("adding more comments");
-    //     document.querySelector('rh-comments')[0].parseCommentData(testData2);
-    //   },
-    //   2000
-    // );
-
 
   </script>
 </body>

@@ -11,12 +11,24 @@ stories.addDecorator(withKnobs);
 
 stories.add("pfe-comments", () => {
   const nodeOptions = {
-    "637583": 637583,
-    "11025": 11025
+    "11025": "20 comments (11025)",
+    "637583": "Two pages, mixed (637583)",
+    "11258": "LOTS of comments (11258)"
   };
 
-  document.addEventListener("pfeconfig-query", function(e) {
+  document.addEventListener("pfeconfig-query", function (e) {
+    console.log("Caught event in setup, attempting to respond.");
+
     e.path[0].config = {
+      "pfelements": {
+        "host": 'http://localhost',
+        "user": {
+          "username": 'jason.smith',
+          "firstname": 'Jason',
+          "lastname": 'Smith',
+          "uid": '12345'
+        }
+      },
       "pfeComments": {
         "rest": {
           "create": "http://10.254.254.254/api/redhat_comments",
@@ -27,13 +39,14 @@ stories.add("pfe-comments", () => {
         }
       }
     };
-    console.log("Caught event in setup, attempting to respond.");
   });
 
 
   let nodeSelect = select("Node", nodeOptions, "11025");
-  let pageSelect = text("Page", "1");
-  let perPageSelect = text("Num per page", "6");
+  // @TODO: This is not yet implemented.
+  //let pageSelect = text("Page", "1");
+  // @TODO: This is not yet implemented.
+  //let perPageSelect = text("Num per page", "6");
 
   return `
 
@@ -42,9 +55,6 @@ stories.add("pfe-comments", () => {
     <pfe-comments
       page-id="${nodeSelect}"
       id="rhpage-comments"
-      page="${pageSelect}"
-      page-size="${perPageSelect}"
-      show-pager="0"
       load-more="0"
     ></pfe-comments>
   </section>
@@ -53,9 +63,6 @@ stories.add("pfe-comments", () => {
     <pre><code>&lt;pfe-comments
       page-id=&quot;${nodeSelect}&quot;
       id=&quot;rhpage-comments&quot;
-      page=&quot;${pageSelect}&quot;
-      page-size=&quot;${perPageSelect}&quot;
-      show-pager=&quot;0&quot;
       load-more=&quot;0&quot;
     &gt;&lt;/pfe-comments&gt;</code></pre>
   </section>

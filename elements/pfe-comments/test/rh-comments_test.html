@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <script src="/components/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script src="/components/web-component-tester/browser.js"></script>
-    <script type="module" src="../rh-comments.js"></script>
+    <script type="module" src="../pfe-comments.js"></script>
   </head>
   <body>
 
-    <rh-comments>
+    <pfe-comments>
       This is the element content.
-    </rh-comments>
+    </pfe-comments>
 
     <script>
-      suite('<rh-comments>', () => {
+      suite('<pfe-comments>', () => {
         test('it should upgrade', () => {
-          assert.instanceOf(document.querySelector('rh-comments'), customElements.get("rh-comments", 'rh-comments should be an instance of rhComments'));
+          assert.instanceOf(
+            document.querySelector('pfe-comments'),
+            customElements.get("pfe-comments", 'pfe-comments should be an instance of pfeComments')
+          );
         });
 
         // you need to write more tests!!!
